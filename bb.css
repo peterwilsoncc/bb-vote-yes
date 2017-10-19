@@ -2,7 +2,7 @@
     background-image: linear-gradient(to bottom, #e24c3e 0%, #e24c3e 16.66667%, #f47d3b 16.66667%, #f47d3b 33.33333%, #fdb813 33.33333%, #fdb813 50%, #74bb5d 50%, #74bb5d 66.66667%, #38a6d7 66.66667%, #38a6d7 83.33333%, #8c7ab8 83.33333%, #8c7ab8 100% );
 }
 
-#approve-button:hover:not([resolved]):not([disabled]) {
+#approve-button:hover:not([disabled]) {
     box-shadow: 0 0 5px #aaa;
 }
 
@@ -17,11 +17,14 @@
     font-size: 14px;
 }
 
-#approve-button[disabled],#approve-button[resolved] {
+#approve-button[disabled] {
     opacity: 0.6;
 }
 
-#approve-button[disabled] > span, #approve-button[resolved] > span {
+#approve-button[disabled] > span {
     color: #ddd;
 }
 
+[data-has-current-user-approved="true"] > #approve-button > span::after {
+	content: 'Unapprove';
+}
